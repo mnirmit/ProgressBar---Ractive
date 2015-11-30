@@ -51,7 +51,6 @@ ractive.on({
             ractive.set('progress2', progress2);
         }
     },
-
     plusTen: function() {
         var selectedValue = ractive.get('selectedProgress');
         if (selectedValue == 0) {
@@ -81,7 +80,6 @@ ractive.on({
             ractive.set('progress2', progress2);
         }
     },
-
     minusTen: function() {
         var selectedValue = ractive.get('selectedProgress');
         if (selectedValue == 0) {
