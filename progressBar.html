@@ -6,64 +6,57 @@
 <body>
    <div id='container'></div>
    <script id="template" type='text/ractive'>
-      <h1>Progress Bar</h1>
+		<h1>Progress Bar</h1>
       
-        {{#if progress<100}}
-         
-        <div class="progress-bar-fill-blue" style="width: {{progress/2}}%">
-      <span class="progress-label">{{progress}}%</span>
-        </div>
+	    {{#if progress < 300}}
+			<div class="progress-bar-fill-blue" style="width: {{progress/4}}%">
+				<span class="progress-label">{{progress}}%</span>
+			</div>
+        {{/if}}
+
+        {{#if progress >= 300}}
+			<div class="progress-bar-fill-red" style="width: 50%">
+				<span class="progress-label">{{progress}}%</span>
+			</div>
+        {{/if}}
+		<br/> 
+        
+		{{#if progress1 < 300}}
+			<div class="progress-bar-fill-green" style="width: {{progress1/4}}%">
+				<span class="progress-label">{{progress1}}%</span>
+			</div>
         {{/if}}
         
-         {{#if progress>=100}}
-        <div class="progress-bar-fill-red" style="width: 50%">
-          <span class="progress-label">{{progress}}%</span>
-        </div>
-        {{/if}}
-         
-      <br/> 
-        {{#if progress1<100}}
-         
-        <div class="progress-bar-fill-green" style="width: {{progress1/2}}%">
-      <span class="progress-label">{{progress1}}%</span>
-        </div>
-        {{/if}}
-        
-         {{#if progress1>=100}}
-        <div class="progress-bar-fill-red" style="width: 50%">
-      <span class="progress-label">{{progress1}}%</span>
-        </div>
+        {{#if progress1 >= 300}}
+			<div class="progress-bar-fill-red" style="width: 50%">
+				<span class="progress-label">{{progress1}}%</span>
+			</div>
         {{/if}}
         <br/> 
-      {{#if progress2<100}}
-         
-        <div class="progress-bar-fill-orange" style="width: {{progress2/2}}%">
-      <span class="progress-label">{{progress2}}%</span>
-        </div>
+    
+		{{#if progress2<300}}
+			<div class="progress-bar-fill-orange" style="width: {{progress2/4}}%">
+				<span class="progress-label">{{progress2}}%</span>
+			</div>
         {{/if}}
         
-         {{#if progress2>=100}}
-        <div class="progress-bar-fill-red" style="width: 50%">
-      <span class="progress-label">{{progress2}}%</span>
-        </div>
+        {{#if progress2>=300}}
+			<div class="progress-bar-fill-red" style="width: 50%">
+				<span class="progress-label">{{progress2}}%</span>
+			</div>
         {{/if}} 
+		<br/>
       
-      <br/>
-      <select value='{{selectedProgress}}'>
-        {{#progressbars}}
-            <option value='{{id}}'>{{name}}</option>
-        {{/progressbars}}
-      </select>
-        
-      
-           <button on-click='plusTwentyfive'>+25</button>
-           <button on-click='plusTen'>+10</button>
-           <button on-click='minusTen'>-10</button>
-           <button on-click='minusTwentyFive'>-25</button>
-      
-      
-      
+		<select value='{{selectedProgress}}'>
+			{{#progressbars}}
+				<option value='{{id}}'>{{name}}</option>
+			{{/progressbars}}
+		</select>
+
+		<button on-click='plusTwentyfive'>+25</button>
+        <button on-click='plusTen'>+10</button>
+        <button on-click='minusTen'>-10</button>
+        <button on-click='minusTwentyFive'>-25</button>
    </script>
    <script src="progressBar.js" ></script>
-   
 </body>
